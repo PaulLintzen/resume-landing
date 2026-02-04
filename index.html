@@ -67,19 +67,28 @@
         p.description { font-size: 0.9em; }
         a.button { font-size: 1em; padding: 12px; }
     }
+    .headshot {
+    width: 120px;         /* adjust size as needed */
+    height: 120px;
+    border-radius: 50%;   /* makes it circular */
+    object-fit: cover;    /* crops to fit nicely */
+    margin-bottom: 20px;  /* space below the image */
+    border: 2px solid #ccc; /* optional subtle border */
+}
 </style>
 </head>
 <body>
-
+<img src="headshot.jpg" alt="Paul Lintzen" class="headshot">
 <h1>Paul Lintzen</h1>
 <p class="description">BS in Computer Science | MS in Data Science</p>
 <div class="buttons">
     <a href="https://www.linkedin.com/in/paul-lintzen/" class="button linkedin" target="_blank">LinkedIn</a>
     <a href="https://github.com/PaulLintzen/image-calorie-predictor.git" class="button github" target="_blank">AI Calorie Predictor Project</a>
     <a href="mailto:paul_lintzen@mines.edu" class="button email">Email Me</a>
-    <a href="resumev1.pdf" class="button resume" target="_blank">Resume</a>
+    <a href="resumev2.pdf" class="button resume" target="_blank">Resume</a>
 </div>
 
 </body>
 </html>
+
 
