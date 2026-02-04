@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Denver Crime and RTD Stops Interactive Map</title>
+<title>Geospatial Analysis of Denver Crime Data around RTD Bus Stops</title>
 <style>
     body { font-family: sans-serif; text-align: center; padding: 40px; background: #f7f7f7; }
     h1 { margin-bottom: 20px; }
@@ -15,8 +15,10 @@
 </style>
 </head>
 <body>
-<h1>Interactive Village Map Project</h1>
-<p>This project visualizes village connections and transit routes interactively. Explore the HTML map or check out the report and slides for details.</p>
+<h1>Geospatial Analysis of Denver Crime Data around RTD Bus Stops</h1>
+<p>This project takes Denver crime records for the past five years along with public transit stop data to explore connections between the two. 
+    Each reported crime is assigned to its nearest stop, with bubble size representing total crime count and color indicating the proportion of violent crimes. 
+    Stops with more than 33% violent crimes are outlined in red. This approach allows quick comparison of safer and more dangerous stops, though it may over- or under-represent crime at isolated or clustered stops and near notable locations like airports, police stations, or courthouses.
 
 <a href="https://paullintzen.github.io/CSCI403FinalProjectHTMLMap/" class="map" target="_blank">View HTML Map</a>
 <a href="report.pdf" class="report" target="_blank">View Report</a>
