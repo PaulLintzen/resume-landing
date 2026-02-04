@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect with Me</title>
+<style>
+    /* Reset some defaults */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: 'Helvetica Neue', sans-serif;
+        background: #f4f4f9;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        font-size: 2em;
+        color: #222;
+    }
+
+    p.description {
+        margin-bottom: 40px;
+        font-size: 1em;
+        color: #555;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    a.button {
+        display: block;
+        padding: 14px 20px;
+        border-radius: 10px;
+        font-size: 1.1em;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    a.button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    a.linkedin { background: #0073b1; }
+    a.github { background: #333; }
+    a.email { background: #d44638; }
+    a.resume { background: #4CAF50; }
+
+    @media (max-width: 400px) {
+        h1 { font-size: 1.5em; }
+        p.description { font-size: 0.9em; }
+        a.button { font-size: 1em; padding: 12px; }
+    }
+</style>
+</head>
+<body>
+
+<h1>Paul Lintzen</h1>
+<p class="description">BS in Computer Science | MS in Data Science</p>
+<div class="buttons">
+    <a href="https://www.linkedin.com/in/paul-lintzen/" class="button linkedin" target="_blank">LinkedIn</a>
+    <a href="https://github.com/PaulLintzen/image-calorie-predictor.git" class="button github" target="_blank">AI Calorie Predictor Project</a>
+    <a href="mailto:paul_lintzen@mines.edu" class="button email">Email Me</a>
+    <a href="resume.pdf" class="button resume" target="_blank">Resume</a>
+</div>
+
+</body>
+</html>
