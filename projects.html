@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects</title>
 <style>
-    /* Reset some defaults */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
         font-family: 'Helvetica Neue', sans-serif;
@@ -13,11 +12,10 @@
         color: #333;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         min-height: 100vh;
         text-align: center;
-        padding: 20px;
+        padding: 40px 20px;
     }
     h1 {
         margin-bottom: 10px;
@@ -29,46 +27,70 @@
         font-size: 1em;
         color: #555;
     }
-    .buttons {
+    .cards {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
         width: 100%;
-        max-width: 300px;
+        max-width: 480px;
     }
-    a.button {
-        display: block;
-        padding: 14px 20px;
-        border-radius: 10px;
-        font-size: 1.1em;
+    .card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: left;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        border-top: 5px solid var(--accent);
+    }
+    .card h2 {
+        font-size: 1.15em;
+        color: #222;
+        margin-bottom: 6px;
+    }
+    .card p {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 14px;
+    }
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .link {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 0.85em;
         font-weight: bold;
         text-decoration: none;
         color: white;
-        transition: transform 0.2s, box-shadow 0.2s;
+        background: var(--accent);
+        transition: transform 0.15s, box-shadow 0.15s;
     }
-    a.button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    .link:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
-    a.github { background: #4A5C7A; }
-    a.github2 { background: #3F8083; }
-    a.github3 { background: #C4623D; }
-    a.github4 { background: #C9942F; }
-    a.github5 { background: #7A5980; }
+    .link.placeholder {
+        background: #e0e0e6;
+        color: #999;
+        cursor: default;
+        pointer-events: none;
+        font-weight: normal;
+    }
+    .project1 { --accent: #4A5C7A; } /* Slate Blue */
+    .project2 { --accent: #3F8083; } /* Muted Teal */
+    .project3 { --accent: #C4623D; } /* Terracotta */
+    .project4 { --accent: #C9942F; } /* Mustard Gold */
+    .project5 { --accent: #7A5980; } /* Plum */
     a.back {
         display: inline-block;
-        margin-top: 25px;
-        background: none;
+        margin-top: 30px;
         color: #555;
         font-weight: normal;
         font-size: 0.95em;
-        padding: 6px 10px;
-        box-shadow: none;
-    }
-    a.back:hover {
-        color: #222;
-        transform: none;
-        box-shadow: none;
+        text-decoration: none;
     }
     a.back:hover span {
         text-decoration: underline;
@@ -76,19 +98,64 @@
     @media (max-width: 400px) {
         h1 { font-size: 1.5em; }
         p.description { font-size: 0.9em; }
-        a.button { font-size: 1em; padding: 12px; }
     }
 </style>
 </head>
 <body>
 <h1>Projects</h1>
 <p class="description">A selection of things I've built</p>
-<div class="buttons">
-    <a href="quantum-simulator-slides.pdf" class="button github" target="_blank">Quantum Simulator Project</a>
-    <a href="https://github.com/PaulLintzen/image-calorie-predictor.git" class="button github2" target="_blank">AI Calorie Predictor Project</a>
-    <a href="DNS-threat-detection.pdf" class="button github3" target="_blank">DNS Threat Detection Project</a>
-    <a href="project-map.html" class="button github4" target="_blank">Denver Crime & RTD Project</a>
-    <a href="https://paullintzen.github.io/pc-recs/" class="button github5" target="_blank">PC Recommendation Site</a>
+<div class="cards">
+
+    <div class="card project1">
+        <h2>Quantum Simulator Project</h2>
+        <p>Quantum circuit benchmarking and ML performance prediction pipeline.</p>
+        <div class="links">
+            <a href="#" class="link placeholder" target="_blank">Project</a>
+            <a href="quantum-simulator-slides.pdf" class="link" target="_blank">Slides</a>
+            <a href="#" class="link placeholder" target="_blank">Report</a>
+        </div>
+    </div>
+
+    <div class="card project2">
+        <h2>AI Calorie Predictor</h2>
+        <p>Image-based calorie estimation model.</p>
+        <div class="links">
+            <a href="https://github.com/PaulLintzen/image-calorie-predictor.git" class="link" target="_blank">Repo</a>
+            <a href="#" class="link placeholder" target="_blank">Slides</a>
+            <a href="#" class="link placeholder" target="_blank">Report</a>
+        </div>
+    </div>
+
+    <div class="card project3">
+        <h2>DNS Threat Detection</h2>
+        <p>Ensemble anomaly detection on real-world DNS query data.</p>
+        <div class="links">
+            <a href="#" class="link placeholder" target="_blank">Repo</a>
+            <a href="#" class="link placeholder" target="_blank">Slides</a>
+            <a href="DNS-threat-detection.pdf" class="link" target="_blank">Report</a>
+        </div>
+    </div>
+
+    <div class="card project4">
+        <h2>Denver Crime &amp; RTD Project</h2>
+        <p>Interactive mapping of Denver crime data against RTD transit lines.</p>
+        <div class="links">
+            <a href="project-map.html" class="link" target="_blank">Project</a>
+            <a href="#" class="link placeholder" target="_blank">Slides</a>
+            <a href="#" class="link placeholder" target="_blank">Report</a>
+        </div>
+    </div>
+
+    <div class="card project5">
+        <h2>PC Recommendation Site</h2>
+        <p>Curated PC build recommendations across budget tiers.</p>
+        <div class="links">
+            <a href="https://paullintzen.github.io/pc-recs/" class="link" target="_blank">Project</a>
+            <a href="#" class="link placeholder" target="_blank">Slides</a>
+            <a href="#" class="link placeholder" target="_blank">Report</a>
+        </div>
+    </div>
+
 </div>
 <a href="index.html" class="back">&larr; <span>Back</span></a>
 </body>
