@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect with Me</title>
+<style>
+    /* Reset some defaults */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: 'Helvetica Neue', sans-serif;
+        background: #f4f4f9;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        padding: 20px;
+    }
+    h1 {
+        margin-bottom: 10px;
+        font-size: 2em;
+        color: #222;
+    }
+    p.description {
+        margin-bottom: 40px;
+        font-size: 1em;
+        color: #555;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+    }
+    a.button {
+        display: block;
+        padding: 14px 20px;
+        border-radius: 10px;
+        font-size: 1.1em;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    a.button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    a.linkedin { background: #0077B5; }
+    a.projects { background: #333333; }
+    a.resume { background: #4CAF50; }
+    a.email { background: #d44638; }
+    @media (max-width: 400px) {
+        h1 { font-size: 1.5em; }
+        p.description { font-size: 0.9em; }
+        a.button { font-size: 1em; padding: 12px; }
+    }
+    .headshot {
+    width: 120px;         /* adjust size as needed */
+    height: 120px;
+    border-radius: 50%;   /* makes it circular */
+    object-fit: cover;    /* crops to fit nicely */
+    margin-bottom: 20px;  /* space below the image */
+    border: 2px solid #ccc; /* optional subtle border */
+}
+</style>
+</head>
+<body>
+<img src="headshot.jpg" alt="Paul Lintzen" class="headshot">
+<h1>Paul Lintzen</h1>
+<p class="description">BS in Computer Science | MS in Data Science</p>
+<div class="buttons">
+    <a href="https://www.linkedin.com/in/paul-lintzen/" class="button linkedin" target="_blank">LinkedIn</a>
+    <a href="projects.html" class="button projects">Projects</a>
+    <a href="jun2026-public-resume.pdf" class="button resume" target="_blank">Digital Resume</a>
+    <a href="mailto:paul_lintzen@mines.edu" class="button email">Email Me</a>
+</div>
+</body>
+</html>
