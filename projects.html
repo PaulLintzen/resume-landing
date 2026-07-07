@@ -54,7 +54,24 @@
     a.github2 { background: #9A7AA0; }
     a.github3 { background: #ff7734; }
     a.github4 { background: #e1ad01; }
-    a.back { background: #4CAF50; }
+    a.back {
+        display: inline-block;
+        margin-top: 25px;
+        background: none;
+        color: #555;
+        font-weight: normal;
+        font-size: 0.95em;
+        padding: 6px 10px;
+        box-shadow: none;
+    }
+    a.back:hover {
+        color: #222;
+        transform: none;
+        box-shadow: none;
+    }
+    a.back:hover span {
+        text-decoration: underline;
+    }
     @media (max-width: 400px) {
         h1 { font-size: 1.5em; }
         p.description { font-size: 0.9em; }
@@ -70,7 +87,7 @@
     <a href="DNS-threat-detection.pdf" class="button github3" target="_blank">DNS Threat Detection Project</a>
     <a href="project-map.html" class="button github2" target="_blank">Denver Crime & RTD Project</a>
     <a href="https://paullintzen.github.io/pc-recs/" class="button github4" target="_blank">PC Recommendation Site</a>
-    <a href="index.html" class="button back">&larr; Back</a>
 </div>
+<a href="index.html" class="back">&larr;<span>Back</span></a>
 </body>
 </html>
