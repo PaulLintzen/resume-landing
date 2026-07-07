@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects</title>
+<style>
+    /* Reset some defaults */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: 'Helvetica Neue', sans-serif;
+        background: #f4f4f9;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+        padding: 20px;
+    }
+    h1 {
+        margin-bottom: 10px;
+        font-size: 2em;
+        color: #222;
+    }
+    p.description {
+        margin-bottom: 40px;
+        font-size: 1em;
+        color: #555;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+    }
+    a.button {
+        display: block;
+        padding: 14px 20px;
+        border-radius: 10px;
+        font-size: 1.1em;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    a.button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    a.github { background: #333333; }
+    a.github2 { background: #9A7AA0; }
+    a.github3 { background: #ff7734; }
+    a.github4 { background: #e1ad01; }
+    a.back { background: #4CAF50; }
+    @media (max-width: 400px) {
+        h1 { font-size: 1.5em; }
+        p.description { font-size: 0.9em; }
+        a.button { font-size: 1em; padding: 12px; }
+    }
+</style>
+</head>
+<body>
+<h1>Projects</h1>
+<p class="description">A selection of things I've built</p>
+<div class="buttons">
+    <a href="https://github.com/PaulLintzen/image-calorie-predictor.git" class="button github" target="_blank">AI Calorie Predictor Project</a>
+    <a href="DNS-threat-detection.pdf" class="button github3" target="_blank">DNS Threat Detection Project</a>
+    <a href="project-map.html" class="button github2" target="_blank">Denver Crime & RTD Project</a>
+    <a href="https://paullintzen.github.io/pc-recs/" class="button github4" target="_blank">PC Recommendation Site</a>
+    <a href="index.html" class="button back">&larr; Back</a>
+</div>
+</body>
+</html>
