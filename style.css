@@ -1,0 +1,28 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --c1: #4A5C7A; /* Slate Blue */
+    --c2: #3F8083; /* Muted Teal */
+    --c3: #C4623D; /* Terracotta */
+    --c4: #C9942F; /* Mustard Gold */
+    --c5: #7A5980; /* Plum */
+    --c6: #4E7A8C; /* Steel Blue */
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #f4f4f9;
+    color: #333;
+}
+
+a.back {
+    display: inline-block;
+    margin-top: 30px;
+    color: #555;
+    font-weight: normal;
+    font-size: 0.95em;
+    text-decoration: none;
+}
+a.back:hover span {
+    text-decoration: underline;
+}

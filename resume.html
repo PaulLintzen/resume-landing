@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume</title>
+<meta name="description" content="Paul Lintzen's resume — M.S. in Data Science &amp; Quantum Engineering, B.S. in Computer Science, Colorado School of Mines.">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="manifest" href="icons/site.webmanifest">
+<link rel="stylesheet" href="style.css">
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    h1 {
+        margin-bottom: 24px;
+        font-size: 2em;
+        color: #222;
+    }
+    .resume-frame-wrap {
+        width: 100%;
+        max-width: 780px;
+        background: white;
+        border-radius: 12px;
+        padding: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .resume-frame {
+        display: block;
+        width: 100%;
+        height: 80vh;
+        border: none;
+        border-radius: 6px;
+    }
+    .fallback {
+        margin-top: 10px;
+        font-size: 0.85em;
+        color: #999;
+    }
+    .fallback a {
+        color: var(--c1);
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .fallback a:hover {
+        text-decoration: underline;
+    }
+    a.download {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-size: 1em;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        background: var(--c4);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    a.download:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 400px) {
+        h1 { font-size: 1.5em; }
+        p.description { font-size: 0.9em; }
+    }
+</style>
+</head>
+<body>
+<h1>Resume</h1>
+
+<div class="resume-frame-wrap">
+    <iframe src="documents/jun2026-public-resume.pdf" class="resume-frame" title="Paul Lintzen's Resume"></iframe>
+</div>
+<p class="fallback">Not displaying? <a href="documents/jun2026-public-resume.pdf" target="_blank">Open it directly</a>.</p>
+
+<a href="documents/jun2026-public-resume.pdf" class="download" download>Download PDF</a>
+<a href="index.html" class="back">&larr; <span>Back</span></a>
+</body>
+</html>
