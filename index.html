@@ -3,19 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connect with Me</title>
+<title>Paul Lintzen</title>
+<meta name="description" content="Paul Lintzen — M.S. in Data Science &amp; Quantum Engineering, B.S. in Computer Science, Colorado School of Mines.">
+<meta property="og:title" content="Paul Lintzen">
+<meta property="og:description" content="M.S. in Data Science &amp; Quantum Engineering | B.S. in Computer Science, Colorado School of Mines">
+<meta property="og:image" content="headshot.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
 <link rel="manifest" href="icons/site.webmanifest">
+<link rel="stylesheet" href="style.css">
 <style>
-    /* Reset some defaults */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
         position: relative;
-        font-family: 'Helvetica Neue', sans-serif;
-        background: #f4f4f9;
-        color: #333;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -77,9 +79,9 @@
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-    a.projects { background: #C4623D; }
-    a.courses { background: #4A5C7A; }
-    a.resume { background: #C9942F; }
+    a.projects { background: var(--c3); }
+    a.courses { background: var(--c1); }
+    a.resume { background: var(--c4); }
     .social-icons {
         display: flex;
         justify-content: center;
@@ -113,24 +115,45 @@
         p.description { font-size: 0.9em; }
         a.button { font-size: 1em; padding: 12px; }
     }
+    .avatar {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
     .headshot {
-    width: 120px;         /* adjust size as needed */
-    height: 120px;
-    border-radius: 50%;   /* makes it circular */
-    object-fit: cover;    /* crops to fit nicely */
-    margin-bottom: 20px;  /* space below the image */
-    border: 2px solid #ccc; /* optional subtle border */
-}
+        display: block;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #ccc;
+    }
+    .school-badge {
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: white;
+        padding: 0px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        object-fit: contain;
+        object-position: center 10%;
+    }
 </style>
 </head>
 <body>
-<img src="headshot.jpg" alt="Paul Lintzen" class="headshot">
+<div class="avatar">
+    <img src="headshot.jpg" alt="Paul Lintzen" class="headshot">
+    <img src="mines.png" alt="Colorado School of Mines" class="school-badge">
+</div>
 <h1>Paul Lintzen</h1>
-<p class="description">M.S. in Data Science | B.S. in Computer Science</p>
+<p class="description">B.S. in Computer Science | Dual M.S. in Data Science &amp; Quantum Engineering</p>
 <div class="buttons">
     <a href="projects.html" class="button projects">Projects</a>
     <a href="courses.html" class="button courses">Courses</a>
-    <a href="documents/jun2026-public-resume.pdf" class="button resume" target="_blank">Digital Resume</a>
+    <a href="resume.html" class="button resume">Digital Resume</a>
 </div>
 <div class="social-icons">
     <a href="https://www.linkedin.com/in/paul-lintzen/" class="icon-link linkedin" target="_blank" aria-label="LinkedIn">

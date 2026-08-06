@@ -4,16 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects</title>
+<meta name="description" content="A selection of projects by Paul Lintzen spanning quantum computing, machine learning, and data science.">
 <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
 <link rel="manifest" href="icons/site.webmanifest">
+<link rel="stylesheet" href="style.css">
 <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-        font-family: 'Helvetica Neue', sans-serif;
-        background: #f4f4f9;
-        color: #333;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -55,9 +53,21 @@
         border-top: 5px solid var(--accent);
     }
     .card h2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 8px;
         font-size: 1.15em;
         color: #222;
         margin-bottom: 6px;
+    }
+    .card h2 .semester {
+        font-size: 0.7em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: var(--accent);
+        white-space: nowrap;
     }
     .card p {
         font-size: 0.9em;
@@ -91,22 +101,11 @@
         pointer-events: none;
         font-weight: normal;
     }
-    .project1 { --accent: #4A5C7A; } /* Slate Blue */
-    .project2 { --accent: #3F8083; } /* Muted Teal */
-    .project3 { --accent: #C4623D; } /* Terracotta */
-    .project4 { --accent: #C9942F; } /* Mustard Gold */
-    .project5 { --accent: #7A5980; } /* Plum */
-    a.back {
-        display: inline-block;
-        margin-top: 30px;
-        color: #555;
-        font-weight: normal;
-        font-size: 0.95em;
-        text-decoration: none;
-    }
-    a.back:hover span {
-        text-decoration: underline;
-    }
+    .project1 { --accent: var(--c1); }
+    .project2 { --accent: var(--c2); }
+    .project3 { --accent: var(--c3); }
+    .project4 { --accent: var(--c4); }
+    .project5 { --accent: var(--c5); }
     @media (max-width: 400px) {
         h1 { font-size: 1.5em; }
         p.description { font-size: 0.9em; }
@@ -115,12 +114,12 @@
 </head>
 <body>
 <h1>Projects</h1>
-<p class="description">A selection of things I've built</p>
+<p class="description">A selection of things I've built.</p>
 <div class="cards">
 
     <div class="card project1">
-        <h2>Quantum Circuit Simulation</h2>
-        <p class="tag">CSCI370: Field Session - Summer 2026</p>
+        <h2><span>Quantum Circuit Simulation</span><span class="semester">Summer 2026</span></h2>
+        <p class="tag">CSCI370: Field Session</p>
         <p>Quantum circuit benchmarking and ML performance prediction pipeline for Quantum Rings.</p>
         <div class="links">
             <a href="https://cs-courses.mines.edu/csci370/index.html" class="link" target="_blank">Course</a>
@@ -131,8 +130,8 @@
     </div>
 
     <div class="card project2">
-        <h2>AI Calorie Predictor</h2>
-        <p class="tag">CSCI413: Advanced Data Science - Fall 2025</p>
+        <h2><span>AI Calorie Predictor</span><span class="semester">Fall 2025</span></h2>
+        <p class="tag">CSCI413: Advanced Data Science</p>
         <p>Image-based calorie estimation model.</p>
         <div class="links">
             <a href="https://github.com/PaulLintzen/image-calorie-predictor.git" class="link" target="_blank">Repo</a>
@@ -142,8 +141,8 @@
     </div>
 
     <div class="card project3">
-        <h2>DNS Threat Detection Model</h2>
-        <p class="tag">DSCI570: Intro to Machine Learning - Spring 2026</p>
+        <h2><span>DNS Threat Detection Model</span><span class="semester">Spring 2026</span></h2>
+        <p class="tag">DSCI570: Intro to Machine Learning</p>
         <p>Ensemble anomaly detection on real-world DNS query data.</p>
         <div class="links">
             <a href="documents/dns-threat-detection-slides.pdf" class="link" target="_blank">Slides</a>
@@ -152,8 +151,8 @@
     </div>
 
     <div class="card project4">
-        <h2>Denver Crime &amp; RTD Project</h2>
-        <p class="tag">CSCI403: Database Management - Fall 2025</p>
+        <h2><span>Denver Crime &amp; RTD Project</span><span class="semester">Fall 2025</span></h2>
+        <p class="tag">CSCI403: Database Management</p>
         <p>Interactive mapping of Denver crime data against RTD transit lines.</p>
         <div class="links">
             <a href="https://paullintzen.github.io/CSCI403FinalProjectHTMLMap/" class="link" target="_blank">Map</a>
@@ -163,8 +162,8 @@
     </div>
 
     <div class="card project5">
-        <h2>PC Recommendation Site</h2>
-        <p class="tag">Personal Project - Summer 2026</p>
+        <h2><span>PC Recommendation Site</span><span class="semester">Summer 2026</span></h2>
+        <p class="tag">Personal Project</p>
         <p>Curated PC build recommendations across budget tiers. Built from scratch using Astro and JavaScript.</p>
         <div class="links">
             <a href="https://paullintzen.github.io/pc-recs/" class="link" target="_blank">Website</a>
