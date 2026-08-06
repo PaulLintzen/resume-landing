@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coursework</title>
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="manifest" href="icons/site.webmanifest">
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: 'Helvetica Neue', sans-serif;
+        background: #f4f4f9;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .school-logo {
+        width: 72px;
+        height: auto;
+        margin-bottom: 12px;
+    }
+    h1 {
+        margin-bottom: 10px;
+        font-size: 2em;
+        color: #222;
+    }
+    p.description {
+        margin-bottom: 20px;
+        font-size: 1em;
+        color: #555;
+        max-width: 540px;
+    }
+    .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 720px;
+    }
+    .year-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: left;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        border-top: 5px solid var(--accent);
+    }
+    .year-card h2 {
+        font-size: 1.15em;
+        color: #222;
+        margin-bottom: 14px;
+    }
+    .year-1 { --accent: #4A5C7A; }
+    .year-2 { --accent: #3F8083; }
+    .year-3 { --accent: #C4623D; }
+    .year-4 { --accent: #C9942F; }
+    .year-5 { --accent: #7A5980; }
+    .year-6 { --accent: #4E7A8C; }
+    .semesters {
+        display: flex;
+        gap: 28px;
+    }
+    .semester {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+    .semester h3 {
+        font-size: 0.8em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: var(--accent);
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .semester h3 .credits {
+        font-weight: normal;
+        text-transform: none;
+        letter-spacing: normal;
+        color: #999;
+        font-size: 0.95em;
+    }
+    .course-list {
+        list-style: none;
+        display: table;
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 6px;
+    }
+    .course-list li {
+        display: table-row;
+        font-size: 0.85em;
+        line-height: 1.35;
+        color: #555;
+    }
+    .course-list li .code {
+        display: table-cell;
+        white-space: nowrap;
+        vertical-align: baseline;
+        padding-left: 10px;
+        padding-right: 6px;
+        border-left: 3px solid var(--accent);
+        color: #222;
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+        font-size: 0.8em;
+        font-weight: 700;
+    }
+    .course-list li .title {
+        display: table-cell;
+        width: 100%;
+        vertical-align: baseline;
+    }
+    .course-list li .title::before {
+        content: "\2014";
+        margin-right: 6px;
+        color: #999;
+        font-weight: normal;
+    }
+    .milestone {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 720px;
+        color: #777;
+        font-size: 0.85em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+    .milestone::before, .milestone::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #d5d5dc;
+    }
+    .gpa-row {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+    .gpa-card {
+        background: white;
+        border-radius: 10px;
+        padding: 10px 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        min-width: 140px;
+    }
+    .gpa-card .label {
+        font-size: 0.7em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: #999;
+    }
+    .gpa-card .value {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #222;
+    }
+    .gpa-card .note {
+        font-size: 0.7em;
+        color: #999;
+        margin-top: 2px;
+    }
+    a.back {
+        display: inline-block;
+        margin-top: 30px;
+        color: #555;
+        font-weight: normal;
+        font-size: 0.95em;
+        text-decoration: none;
+    }
+    a.back:hover span {
+        text-decoration: underline;
+    }
+    @media (max-width: 400px) {
+        h1 { font-size: 1.5em; }
+        p.description { font-size: 0.9em; }
+    }
+    @media (max-width: 560px) {
+        .semesters {
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+</style>
+</head>
+<body>
+<img src="mines.png" alt="Colorado School of Mines" class="school-logo">
+<h1>Coursework</h1>
+<p class="description">B.S. in Computer Science, Colorado School of Mines, now pursuing a dual M.S. in Data Science and M.S. in Quantum Engineering.</p>
+
+<div class="gpa-row">
+    <div class="gpa-card">
+        <div class="label">Undergraduate GPA</div>
+        <div class="value">4.0</div>
+        <div class="note">Completed</div>
+    </div>
+    <div class="gpa-card">
+        <div class="label">Graduate GPA</div>
+        <div class="value">4.0</div>
+        <div class="note">In progress</div>
+    </div>
+</div>
+
+<div class="timeline">
+
+    <div class="year-card year-1">
+        <h2>Freshman</h2>
+        <div class="semesters">
+            <div class="semester">
+                <h3>Fall 2023 <span class="credits">15 cr</span></h3>
+                <ul class="course-list">
+                    <li><span class="code">MATH 112</span><span class="title">Calculus II</span></li>
+                    <li><span class="code">EDNS 151</span><span class="title">Design I</span></li>
+                    <li><span class="code">CSCI 200</span><span class="title">Foundational Programming Concepts</span></li>
+                    <li><span class="code">CSM 101</span><span class="title">Freshman Success Seminar</span></li>
+                    <li><span class="code">PHGN 100</span><span class="title">Physics I</span></li>
+                </ul>
+            </div>
+            <div class="semester">
+                <h3>Spring 2024 <span class="credits">17 cr</span></h3>
+                <ul class="course-list">
+                    <li><span class="code">MATH 213</span><span class="title">Calculus III</span></li>
+                    <li><span class="code">CHGN 121</span><span class="title">Chemistry I</span></li>
+                    <li><span class="code">CSCI 220</span><span class="title">Data Structures and Algorithms</span></li>
+                    <li><span class="code">CSCI 358</span><span class="title">Discrete Mathematics</span></li>
+                    <li><span class="code">PAGN 286</span><span class="title">Group Fitness</span></li>
+                    <li><span class="code">HASS 111</span><span class="title">Nature and Human Values</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="year-card year-2">
+        <h2>Sophomore</h2>
+        <div class="semesters">
+            <div class="semester">
+                <h3>Fall 2024 <span class="credits">17 cr</span></h3>
+                <ul class="course-list">
+                    <li><span class="code">CSCI 406</span><span class="title">Algorithms</span></li>
+                    <li><span class="code">MATH 334</span><span class="title">Intro to Probability</span></li>
+                    <li><span class="code">CSM 202</span><span class="title">Intro to Student Well-Being</span></li>
+                    <li><span class="code">MATH 332</span><span class="title">Linear Algebra</span></li>
+                    <li><span class="code">PHGN 200</span><span class="title">Physics II</span></li>
+                    <li><span class="code">CSCI 210</span><span class="title">Systems Programming</span></li>
+                </ul>
+            </div>
+            <div class="semester">
+                <h3>Spring 2025 <span class="credits">18 cr</span></h3>
+                <ul class="course-list">
+                    <li><span class="code">CSCI 404</span><span class="title">Artificial Intelligence</span></li>
+                    <li><span class="code">CSCI 341</span><span class="title">Computer Organization</span></li>
+                    <li><span class="code">MATH 225</span><span class="title">Differential Equations</span></li>
+                    <li><span class="code">HASS 200</span><span class="title">Global Studies</span></li>
+                    <li><span class="code">MATH 201</span><span class="title">Intro to Statistics</span></li>
+                    <li><span class="code">CSCI 306</span><span class="title">Software Engineering</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="year-card year-3">
+        <h2>Junior</h2>
+        <div class="semesters">
+            <div class="semester">
+                <h3>Fall 2025 <span class="credits">18 cr</span></h3>
+                <ul class="course-list">
+                    <li><span class="code">CSCI 413</span><span class="title">Advanced Data Science</span></li>
+                    <li><span class="code">CSCI 403</span><span class="title">Data Base Management</span></li>
+                    <li><span class="code">EBGN 321</span><span class="title">Engineering Economics</span></li>
+                    <li><span class="code">MATH 335</span><span class="title">Intro to Mathematical Statistics</span></li>
+                    <li><span class="code">CSCI 442</span><span class="title">Operating Systems</span></li>
+                    <li><span class="code">MATH 324</span><span class="title">Statistical Modeling</span></li>
+                </ul>
+            </div>
+            <div class="semester">
+                <h3>Spring 2026 <span class="credits">15 cr</span></h3>
+                <ul class="course-list">
+                    <li><span class="code">HASS 498A</span><span class="title">Employment Law</span></li>
+                    <li><span class="code">CSCI 474</span><span class="title">Intro to Cryptography</span></li>
+                    <li><span class="code">DSCI 570</span><span class="title">Intro to Machine Learning</span></li>
+                    <li><span class="code">MATH 560</span><span class="title">Key Statistical Learning Methods I</span></li>
+                    <li><span class="code">CSCI 400</span><span class="title">Programming Languages</span></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="year-card year-4">
+        <h2>Field Session</h2>
+        <div class="semesters">
+            <div class="semester">
+                <h3>Summer 2026 <span class="credits">5 cr</span></h3>
+                <ul class="course-list">
+                    <li><span class="code">CSCI 370</span><span class="title">Advanced Software Engineering</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <p class="milestone">🎓 B.S. Computer Science Completed</p>
+
+    <div class="year-card year-5">
+        <h2>Graduate Year 1</h2>
+        <div class="semesters">
+            <div class="semester">
+                <h3>Fall 2026 <span class="credits">15 cr</span></h3>
+                <ul class="course-list">
+                    <li><span class="code">PHGN 519</span><span class="title">Fundamentals of Quantum</span></li>
+                    <li><span class="code">CSCI 598D</span><span class="title">Full-Stack LLMs</span></li>
+                    <li><span class="code">CSCI 507</span><span class="title">Intro to Computer Vision</span></li>
+                    <li><span class="code">MATH 561</span><span class="title">Key Statistical Learning Methods II</span></li>
+                    <li><span class="code">CSCI 542</span><span class="title">Simulation</span></li>
+                </ul>
+            </div>
+            <div class="semester">
+                <h3>Spring 2027 <span class="credits">15 cr</span></h3>
+                <ul class="course-list">
+                    <li><span class="code">MATH 551</span><span class="title">Computational Linear Algebra</span></li>
+                    <li><span class="code">SYGN 598I</span><span class="title">Graduate Internship</span></li>
+                    <li><span class="code">DSCI 575</span><span class="title">Machine Learning</span></li>
+                    <li><span class="code">PHGN 545</span><span class="title">Quantum Many-Body Physics</span></li>
+                    <li><span class="code">CSCI 581</span><span class="title">Quantum Programming</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <p class="milestone">🎓 M.S. Data Science Completed</p>
+
+    <div class="year-card year-6">
+        <h2>Graduate Year 2</h2>
+        <div class="semesters">
+            <div class="semester">
+                <h3>Fall 2027 <span class="credits">12 cr</span></h3>
+                <ul class="course-list">
+                    <li><span class="code">PHGN 707</span><span class="title">Graduate Thesis / Dissertation Research Credit</span></li>
+                    <li><span class="code">PHGN 526</span><span class="title">Quantum Engineering Seminar I</span></li>
+                    <li><span class="code">PHGN 527</span><span class="title">Quantum Engineering Seminar II</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <p class="milestone">🎓 M.S. Quantum Engineering Completed</p>
+
+</div>
+<a href="index.html" class="back">&larr; <span>Back</span></a>
+</body>
+</html>
