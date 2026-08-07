@@ -13,10 +13,10 @@
       (async function () {
         await cheerpjInit({
           version: 17,
-          javaProperties: ["clue.dataDir=/app/Data", "clue.responsiveLayout=true"],
+          javaProperties: ["clue.dataDir=/app/clue-game/Data", "clue.responsiveLayout=true"],
         });
         cheerpjCreateDisplay(-1, -1, document.body);
-        const exitCode = await cheerpjRunMain("clueGame.ClueGameFrame", "/app/ClueGame.jar");
+        const exitCode = await cheerpjRunMain("clueGame.ClueGameFrame", "/app/clue-game/ClueGame.jar");
         console.log("ClueGameFrame exited with code", exitCode);
       })();
     </script>
