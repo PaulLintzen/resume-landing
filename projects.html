@@ -42,7 +42,7 @@
         flex-direction: column;
         gap: 20px;
         width: 100%;
-        max-width: 480px;
+        max-width: 720px;
     }
     .card {
         background: white;
@@ -101,13 +101,58 @@
         pointer-events: none;
         font-weight: normal;
     }
+    .link-menu {
+        position: relative;
+    }
+    .link-menu summary {
+        list-style: none;
+        cursor: pointer;
+    }
+    .link-menu summary::-webkit-details-marker {
+        display: none;
+    }
+    .link-menu summary::after {
+        content: "\25BE";
+        margin-left: 6px;
+    }
+    .link-menu[open] summary {
+        border-radius: 8px 8px 0 0;
+    }
+    .link-menu-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        min-width: 140px;
+        margin-top: 2px;
+        padding: 6px;
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    }
+    .link-menu-list a {
+        padding: 7px 10px;
+        border-radius: 6px;
+        font-size: 0.85em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+        white-space: nowrap;
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .link-menu-list a:hover {
+        background: #f2f2f6;
+    }
     .project1 { --accent: var(--c1); }
     .project2 { --accent: var(--c2); }
     .project3 { --accent: var(--c3); }
     .project4 { --accent: var(--c4); }
     .project5 { --accent: var(--c5); }
     .project6 { --accent: var(--c6); }
-    .project7 { --accent: var(--c1); }
+    .project7 { --accent: var(--c7); }
+    .project8 { --accent: var(--c8); }
     @media (max-width: 400px) {
         h1 { font-size: 1.5em; }
         p.description { font-size: 0.9em; }
@@ -153,6 +198,25 @@
     </div>
 
     <div class="card project4">
+        <h2><span>ML for Metallurgical Defect Detection</span><span class="semester">Summer 2026</span></h2>
+        <p class="tag">Dr. Lowe's Research Team</p>
+        <p>Applying machine learning techniques to microscopy-based metal sheet failure analysis.</p>
+        <div class="links">
+            <a href="https://metallurgy.mines.edu/project/lowe-terry/" class="link" target="_blank">Lab</a>
+            <details class="link-menu">
+                <summary class="link">Reports</summary>
+                <div class="link-menu-list">
+                    <a href="documents/Jun26ResearchReport.pdf" target="_blank">Jun 26</a>
+                    <a href="documents/Jul5ResearchReport.pdf" target="_blank">Jul 05</a>
+                    <a href="documents/Jul12ResearchReport.pdf" target="_blank">Jul 12</a>
+                    <a href="documents/Jul19ResearchReport.pdf" target="_blank">Jul 19</a>
+                    <a href="documents/Aug4ResearchReport.pdf" target="_blank">Aug 04</a>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <div class="card project5">
         <h2><span>Denver Crime &amp; RTD Project</span><span class="semester">Fall 2025</span></h2>
         <p class="tag">CSCI403: Database Management</p>
         <p>Interactive mapping of Denver crime data against RTD transit lines.</p>
@@ -163,7 +227,7 @@
         </div>
     </div>
 
-    <div class="card project5">
+    <div class="card project6">
         <h2><span>PC Recommendation Site</span><span class="semester">Summer 2026</span></h2>
         <p class="tag">Personal Project</p>
         <p>Curated PC build recommendations across budget tiers. Built from scratch using Astro and JavaScript.</p>
@@ -172,7 +236,7 @@
         </div>
     </div>
 
-    <div class="card project6">
+    <div class="card project7">
         <h2><span>Clue Board Game</span><span class="semester">Spring 2025</span></h2>
         <p class="tag">Software Engineering Project</p>
         <p>A digital recreation of our spin on the classic Clue board game with a Swing GUI, playable live in-browser via CheerpJ.</p>
@@ -182,7 +246,7 @@
         </div>
     </div>
 
-    <div class="card project7">
+    <div class="card project8">
         <h2><span>AlgoBowl Competition</span><span class="semester">Fall 2024</span></h2>
         <p class="tag">CSCI406: Algorithms</p>
         <p>Developed a heuristic algorithm to solve an NP-hard problem in a weeklong competition. Our three-person team, "Al Gore's Rythm," won 1st place in section A.</p>
@@ -191,6 +255,7 @@
             <a href="https://mines.algobowl.org/competition/40" class="link" target="_blank">Archive</a>
         </div>
     </div>
+
 
 </div>
 <a href="index.html" class="back">&larr; <span>Back</span></a>
