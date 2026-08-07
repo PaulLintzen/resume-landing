@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Clue (CheerpJ)</title>
+    <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>
+    <style>
+      html, body { margin: 0; height: 100%; width: 100%; overflow: hidden; background: #222; }
+    </style>
+  </head>
+  <body>
+    <script>
+      (async function () {
+        await cheerpjInit({
+          version: 17,
+          javaProperties: ["clue.dataDir=/app/Data", "clue.responsiveLayout=true"],
+        });
+        cheerpjCreateDisplay(-1, -1, document.body);
+        const exitCode = await cheerpjRunMain("clueGame.ClueGameFrame", "/app/ClueGame.jar");
+        console.log("ClueGameFrame exited with code", exitCode);
+      })();
+    </script>
+  </body>
+</html>

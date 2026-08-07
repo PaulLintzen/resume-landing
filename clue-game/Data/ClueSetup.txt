@@ -1,0 +1,27 @@
+// Rooms and room cards
+Room, Dungeon, D
+Room, Kitchen, K
+Room, Laboratory, L
+Room, Throne Room, T
+Room, Armory, A
+Room, Courtyard, C
+Room, Stable, S
+Room, Ballroom, B
+Room, Moat, M
+// Other spaces on board
+Space, Unused, X
+Space, Walkway, W
+// Players
+Person, King, Gold, 29, 16
+Person, Queen, Purple, 23, 2
+Person, Jester, Green, 12, 27
+Person, Chef, White, 12, 7
+Person, Wizard, Blue, 10, 14
+Person, Horse, Rust, 23, 32
+// Weapons
+Weapon, Sword
+Weapon, Scepter
+Weapon, Pen
+Weapon, Knife
+Weapon, Staff
+Weapon, Lance
